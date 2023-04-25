@@ -16,3 +16,6 @@ rootProject.name = "Contacts"
 include(":app")
 include(":domain")
 include(":data")
+include(":features:home")
+include(":features:details")
+include(":features:favorites")
