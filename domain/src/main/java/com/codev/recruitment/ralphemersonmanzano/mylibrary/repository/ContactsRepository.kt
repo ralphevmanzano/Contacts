@@ -3,7 +3,7 @@ package com.codev.recruitment.ralphemersonmanzano.mylibrary.repository
 import com.codev.recruitment.ralphemersonmanzano.mylibrary.model.Contact
 import kotlinx.coroutines.flow.Flow
 
-interface ContactRepository {
+interface ContactsRepository {
     fun getContacts(): Flow<List<Contact>>
     fun getFavorites(): Flow<List<Contact>>
     suspend fun getContactById(id: Int): Contact

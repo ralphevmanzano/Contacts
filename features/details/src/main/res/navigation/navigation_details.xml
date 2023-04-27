@@ -2,10 +2,37 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_details"
-    app:startDestination="@id/fragment_details">
+    app:startDestination="@id/fragment_details_entry_point">
 
     <fragment
         android:id="@+id/fragment_details"
         android:name="com.codev.recruitment.ralphemersonmanzano.details.presentation.DetailsFragment"
         android:label="DetailsFragment" />
+    <fragment
+        android:id="@+id/fragment_form"
+        android:name="com.codev.recruitment.ralphemersonmanzano.details.presentation.FormFragment"
+        android:label="FormFragment" />
+    <fragment
+        android:id="@+id/fragment_details_entry_point"
+        android:name="com.codev.recruitment.ralphemersonmanzano.details.presentation.DetailsEntryPointFragment"
+        android:label="DetailsEntryPointFragment">
+        <action
+            android:id="@+id/action_to_details"
+            app:destination="@id/fragment_details"
+            app:popUpTo="@id/fragment_details_entry_point"
+            app:popUpToInclusive="true">
+            <argument
+                android:name="contactId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_to_form"
+            app:destination="@id/fragment_form"
+            app:popUpTo="@id/fragment_details_entry_point"
+            app:popUpToInclusive="true">
+            <argument
+                android:name="contactId"
+                app:argType="integer" />
+        </action>
+    </fragment>
 </navigation>

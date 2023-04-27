@@ -3,7 +3,7 @@ package com.codev.recruitment.ralphemersonmanzano.mylibrary.datasource.local
 import com.codev.recruitment.ralphemersonmanzano.mylibrary.model.Contact
 import kotlinx.coroutines.flow.Flow
 
-interface ContactLocalDataSource {
+interface ContactsLocalDataSource {
     fun getContacts(): Flow<List<Contact>>
     fun getFavorites(): Flow<List<Contact>>
     suspend fun getContactById(id: Int): Contact

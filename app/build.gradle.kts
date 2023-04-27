@@ -36,12 +36,16 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
     implementation(project(Modules.featureHome))
     implementation(project(Modules.featureFavorites))
     implementation(project(Modules.featureDetails))
+    implementation(project(Modules.shared))
 
     implementation(Deps.androidxCore)
     implementation(Deps.appCompat)

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="redOrange" type="color">#D45246</item>
+    <item name="yellow" type="color">#FEBB5B</item>
+    <item name="purple" type="color">#B694F9</item>
+    <item name="orange" type="color">#FF845E</item>
+    <item name="violet" type="color">#6C61DF</item>
+    <item name="lightGreen" type="color">#9AD164</item>
+    <item name="green" type="color">#46BA43</item>
+    <item name="teal" type="color">#53EDD6</item>
+    <item name="bluegrey" type="color">#F2F5FB</item>
+
+    <integer-array name="avatarColors">
+        <item>@color/redOrange</item>
+        <item>@color/yellow</item>
+        <item>@color/purple</item>
+        <item>@color/orange</item>
+        <item>@color/violet</item>
+        <item>@color/lightGreen</item>
+        <item>@color/green</item>
+        <item>@color/teal</item>
+    </integer-array>
+
+</resources>

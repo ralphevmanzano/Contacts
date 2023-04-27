@@ -3,11 +3,17 @@ package com.codev.recruitment.ralphemersonmanzano.data.di
 import android.content.Context
 import androidx.room.Room
 import com.codev.recruitment.ralphemersonmanzano.data.datasource.local.ContactsDatabase
+import com.codev.recruitment.ralphemersonmanzano.data.datasource.local.ContactsLocalDataSourceImpl
+import com.codev.recruitment.ralphemersonmanzano.data.datasource.local.dao.ContactsDao
+import com.codev.recruitment.ralphemersonmanzano.data.repository.ContactsRepositoryImpl
+import com.codev.recruitment.ralphemersonmanzano.mylibrary.datasource.local.ContactsLocalDataSource
+import com.codev.recruitment.ralphemersonmanzano.mylibrary.repository.ContactsRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Singleton
 
 @Module
@@ -29,5 +35,24 @@ class ContactsDataModule {
             ContactsDatabase::class.java,
             CONTACTS_DB
         ).createFromAsset(DB_ASSET_PATH).build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideContactsDao(contactsDatabase: ContactsDatabase) = contactsDatabase.contactsDao()
+
+    @Provides
+    @Singleton
+    fun provideContactsLocalDataSource(
+        contactsDao: ContactsDao,
+        @IoDispatcher dispatcher: CoroutineDispatcher
+    ): ContactsLocalDataSource {
+        return ContactsLocalDataSourceImpl(contactsDao, dispatcher)
+    }
+
+    @Provides
+    @Singleton
+    fun provideContactsRepository(localDataSource: ContactsLocalDataSource): ContactsRepository {
+        return ContactsRepositoryImpl(localDataSource)
     }
 }

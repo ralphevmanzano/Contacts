@@ -4,6 +4,24 @@
     android:id="@+id/navigation_main"
     app:startDestination="@id/navigation_home">
 
+    <action
+        android:id="@+id/action_to_details"
+        app:destination="@+id/navigation_details"
+        app:enterAnim="@anim/slide_in_from_right"
+        app:exitAnim="@anim/slide_out_to_left"
+        app:popEnterAnim="@anim/slide_in_from_left"
+        app:popExitAnim="@anim/slide_out_to_right">
+
+        <argument
+            android:name="contactId"
+            app:argType="integer" />
+
+        <argument
+            android:name="startDestinationId"
+            app:argType="integer" />
+    </action>
+
     <include app:graph="@navigation/navigation_home" />
     <include app:graph="@navigation/navigation_favorites" />
+    <include app:graph="@navigation/navigation_details" />
 </navigation>

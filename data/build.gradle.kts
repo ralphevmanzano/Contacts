@@ -14,6 +14,12 @@ android {
 
         testInstrumentationRunner = Config.androidTestInstrumentation
         consumerProguardFiles("consumer-rules.pro")
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
     }
 
     buildTypes {

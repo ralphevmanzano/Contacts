@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs")
     kotlin("kapt")
 }
 
@@ -40,6 +42,7 @@ android {
 dependencies {
     implementation(project(Modules.domain))
     implementation(project(Modules.data))
+    implementation(project(Modules.shared))
     implementation(Deps.androidxCore)
     implementation(Deps.appCompat)
     implementation(Deps.material)

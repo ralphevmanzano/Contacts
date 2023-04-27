@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contacts_empty">Your contacts list is empty, please add a contact using the + button</string>
+</resources>
