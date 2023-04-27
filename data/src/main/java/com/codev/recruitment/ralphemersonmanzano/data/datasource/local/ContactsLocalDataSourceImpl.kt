@@ -24,12 +24,12 @@ class ContactsLocalDataSourceImpl (
             .map { contactsEntity -> contactsEntity.map { it.toContact() } }
     }
 
-    override suspend fun getContactById(id: Int): Contact = withContext(dispatcher) {
+    override suspend fun getContactById(id: Long): Contact = withContext(dispatcher) {
         return@withContext contactsDao.getContactById(id).toContact()
     }
 
-    override suspend fun addContact(contact: Contact) = withContext(dispatcher) {
-        contactsDao.addContact(
+    override suspend fun addContact(contact: Contact): Long = withContext(dispatcher) {
+        return@withContext contactsDao.addContact(
             ContactEntity(
                 firstName = contact.firstName,
                 lastName = contact.lastName,
@@ -53,7 +53,7 @@ class ContactsLocalDataSourceImpl (
         )
     }
 
-    override suspend fun deleteContact(id: Int) = withContext(dispatcher) {
+    override suspend fun deleteContact(id: Long) = withContext(dispatcher) {
         contactsDao.deleteContact(id)
     }
 }

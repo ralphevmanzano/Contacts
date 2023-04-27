@@ -12,4 +12,10 @@ object Versions {
     const val room = "2.5.1"
     const val hilt = "2.44"
     const val coroutines = "1.6.4"
+
+    const val sqlcipher = "4.5.3"
+    const val sqlite = "2.1.0"
+    const val mockito = "5.3.1"
+    const val archTesting = "2.2.0"
+    const val coroutinesTest = "1.7.0-RC"
 }

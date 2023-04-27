@@ -2,6 +2,7 @@ package com.codev.recruitment.ralphemersonmanzano.data.di
 
 import android.content.Context
 import androidx.room.Room
+import com.codev.recruitment.ralphemersonmanzano.data.BuildConfig.*
 import com.codev.recruitment.ralphemersonmanzano.data.datasource.local.ContactsDatabase
 import com.codev.recruitment.ralphemersonmanzano.data.datasource.local.ContactsLocalDataSourceImpl
 import com.codev.recruitment.ralphemersonmanzano.data.datasource.local.dao.ContactsDao
@@ -14,6 +15,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
+import net.sqlcipher.BuildConfig
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import javax.inject.Singleton
 
 @Module
@@ -30,11 +34,14 @@ class ContactsDataModule {
     fun provideDatabase(
         @ApplicationContext context: Context
     ): ContactsDatabase {
+        val factory = SupportFactory(SQLiteDatabase.getBytes(DB_PASSPHRASE.toCharArray()))
         return Room.databaseBuilder(
             context,
             ContactsDatabase::class.java,
             CONTACTS_DB
-        ).createFromAsset(DB_ASSET_PATH).build()
+        ).openHelperFactory(factory)
+            .createFromAsset(DB_ASSET_PATH)
+            .build()
     }
 
     @Provides

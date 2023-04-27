@@ -54,6 +54,9 @@ dependencies {
     implementation(Deps.navigationFragment)
 
     testImplementation(Deps.junit)
+    testImplementation(Deps.mockito)
+    testImplementation(Deps.archTesting)
+    testImplementation(Deps.coroutinesTest)
     androidTestImplementation(Deps.junitTest)
     androidTestImplementation(Deps.espresso)
 }

@@ -29,7 +29,14 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "DB_PASSPHRASE", "\"codev.recruitment\"")
         }
+        debug {
+            buildConfigField("String", "DB_PASSPHRASE", "\"codev.recruitment\"")
+        }
+    }
+    buildFeatures {
+        buildConfig = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -46,6 +53,9 @@ dependencies {
     implementation(Deps.roomRuntime)
     implementation(Deps.roomKtx)
     kapt(Deps.roomCompiler)
+
+    implementation(Deps.sqlcipher)
+    implementation(Deps.sqlite)
 
     implementation(Deps.hilt)
     kapt(Deps.hiltCompiler)

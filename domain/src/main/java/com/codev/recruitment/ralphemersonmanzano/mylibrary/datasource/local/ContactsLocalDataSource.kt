@@ -6,8 +6,8 @@ import kotlinx.coroutines.flow.Flow
 interface ContactsLocalDataSource {
     fun getContacts(): Flow<List<Contact>>
     fun getFavorites(): Flow<List<Contact>>
-    suspend fun getContactById(id: Int): Contact
-    suspend fun addContact(contact: Contact)
+    suspend fun getContactById(id: Long): Contact
+    suspend fun addContact(contact: Contact): Long
     suspend fun updateContact(contact: Contact)
-    suspend fun deleteContact(id: Int)
+    suspend fun deleteContact(id: Long)
 }

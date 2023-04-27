@@ -23,4 +23,11 @@ object Deps {
     const val junit = "junit:junit:${Versions.junit}"
     const val junitTest = "androidx.test.ext:junit:${Versions.junitTest}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+
+    const val sqlcipher = "net.zetetic:android-database-sqlcipher:${Versions.sqlcipher}"
+    const val sqlite = "androidx.sqlite:sqlite:${Versions.sqlite}"
+
+    const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
+    const val archTesting = "androidx.arch.core:core-testing:${Versions.archTesting}"
+    const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
 }

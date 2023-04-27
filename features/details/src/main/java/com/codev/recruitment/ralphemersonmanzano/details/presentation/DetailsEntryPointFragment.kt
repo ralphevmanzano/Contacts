@@ -24,12 +24,14 @@ class DetailsEntryPointFragment: Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val contactId = arguments?.getInt(CONTACT_ID) ?: -1
+        val contactId = arguments?.getLong(CONTACT_ID) ?: -1
         val startDestination = arguments?.getInt(START_DESTINATION_ID)
         if (startDestination == R.id.fragment_details) {
             findNavController().navigate(DetailsEntryPointFragmentDirections.actionToDetails(contactId))
         } else {
-            findNavController().navigate(DetailsEntryPointFragmentDirections.actionToForm(contactId))
+            findNavController().navigate(
+                DetailsEntryPointFragmentDirections.actionToForm(null)
+            )
         }
     }
 

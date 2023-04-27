@@ -17,14 +17,14 @@ interface ContactsDao {
     fun getFavorites(): Flow<List<ContactEntity>>
 
     @Query("SELECT * FROM contact WHERE id = :id")
-    suspend fun getContactById(id: Int): ContactEntity
+    suspend fun getContactById(id: Long): ContactEntity
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addContact(contact: ContactEntity)
+    suspend fun addContact(contact: ContactEntity): Long
 
     @Update
     suspend fun updateContact(contact: ContactEntity)
 
     @Query("DELETE FROM contact WHERE id = :id")
-    suspend fun deleteContact(id: Int)
+    suspend fun deleteContact(id: Long)
 }

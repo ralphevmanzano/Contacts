@@ -12,7 +12,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_back"
-        app:title="Create contact"
         app:titleCentered="true" />
 
     <ImageView
@@ -28,12 +27,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/firstNameField"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/ThemeOverlay.App.TextInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/first_name"
+        app:boxStrokeColor="@color/state_box_stroke"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivPerson"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
@@ -49,11 +49,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/lastNameField"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/ThemeOverlay.App.TextInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:hint="@string/last_name"
+        app:boxStrokeColor="@color/state_box_stroke"
         app:layout_constraintEnd_toEndOf="@id/firstNameField"
         app:layout_constraintStart_toStartOf="@id/firstNameField"
         app:layout_constraintTop_toBottomOf="@id/firstNameField">
@@ -80,11 +81,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/phoneField"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/ThemeOverlay.App.TextInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:hint="@string/phone_number"
+        app:boxStrokeColor="@color/state_box_stroke"
         app:layout_constraintEnd_toEndOf="@id/lastNameField"
         app:layout_constraintStart_toStartOf="@id/lastNameField"
         app:layout_constraintTop_toBottomOf="@id/lastNameField">
@@ -104,7 +106,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="40dp"
         android:text="@string/save"
         android:textAllCaps="false"
         android:textSize="20sp"

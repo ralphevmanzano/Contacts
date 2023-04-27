@@ -9,5 +9,14 @@
     <string name="contact_info">Contact info</string>
     <string name="delete">Delete</string>
     <string name="mobile">Mobile</string>
-    <string name="full_name">%s %s</string>
+    <string name="edit">Edit</string>
+    <string name="favorites">Favorites</string>
+    <string name="delete_contact">Delete contact?</string>
+    <string name="this_contact_will_be_removed">This contact will be removed from your list of contacts</string>
+    <string name="cancel">Cancel</string>
+    <string name="contact_successfully_deleted">Contact successfully deleted</string>
+    <string name="edit_contact">Edit contact</string>
+    <string name="create_contact">Create contact</string>
+    <string name="contact_saved">Contact saved!</string>
+    <string name="contact_updated">Contact updated!</string>
 </resources>

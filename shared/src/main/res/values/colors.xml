@@ -9,6 +9,9 @@
     <item name="green" type="color">#46BA43</item>
     <item name="teal" type="color">#53EDD6</item>
     <item name="bluegrey" type="color">#F2F5FB</item>
+    <item name="lightblue" type="color">#7E9ED3</item>
+    <item name="ligherblue" type="color">#ACC1E4</item>
+    <item name="error" type="color">#FB9086</item>
 
     <integer-array name="avatarColors">
         <item>@color/redOrange</item>

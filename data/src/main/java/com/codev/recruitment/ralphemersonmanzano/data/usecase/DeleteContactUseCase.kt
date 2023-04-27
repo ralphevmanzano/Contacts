@@ -4,5 +4,5 @@ import com.codev.recruitment.ralphemersonmanzano.mylibrary.repository.ContactsRe
 import javax.inject.Inject
 
 class DeleteContactUseCase @Inject constructor(private val repo: ContactsRepository) {
-    suspend operator fun invoke(id: Int) = repo.deleteContact(id)
+    suspend operator fun invoke(id: Long) = repo.deleteContact(id)
 }

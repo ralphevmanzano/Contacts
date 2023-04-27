@@ -1,5 +1,5 @@
 package com.codev.recruitment.ralphemersonmanzano.favorites.navigation
 
 interface FavoritesNavigation {
-    fun navigateToDetails(id: Int)
+    fun navigateToDetails(id: Long)
 }

@@ -4,7 +4,9 @@ import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.codev.recruitment.ralphemersonmanzano.R
+import com.codev.recruitment.ralphemersonmanzano.favorites.navigation.FavoritesNavigation
 import com.codev.recruitment.ralphemersonmanzano.home.navigation.HomeNavigation
+import com.codev.recruitment.ralphemersonmanzano.navigation.FavoritesNavigator
 import com.codev.recruitment.ralphemersonmanzano.navigation.HomeNavigator
 import dagger.Binds
 import dagger.Module
@@ -27,7 +29,9 @@ object NavControllerModule {
 abstract class NavigatorModule {
 
     @Binds
-    abstract fun homeNavigator(navigator: HomeNavigator): HomeNavigation
+    abstract fun homeNavigation(navigator: HomeNavigator): HomeNavigation
 
+    @Binds
+    abstract fun favoritesNavigation(navigator: FavoritesNavigator): FavoritesNavigation
     // add other navigators here
 }

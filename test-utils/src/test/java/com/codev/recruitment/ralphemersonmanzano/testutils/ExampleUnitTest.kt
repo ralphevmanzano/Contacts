@@ -1,4 +1,4 @@
-package com.codev.recruitment.ralphemersonmanzano.home
+package com.codev.recruitment.ralphemersonmanzano.testutils
 
 import org.junit.Test
 

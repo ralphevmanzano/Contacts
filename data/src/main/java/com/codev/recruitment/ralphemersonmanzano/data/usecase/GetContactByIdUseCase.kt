@@ -4,5 +4,5 @@ import com.codev.recruitment.ralphemersonmanzano.mylibrary.repository.ContactsRe
 import javax.inject.Inject
 
 class GetContactByIdUseCase @Inject constructor(private val repo: ContactsRepository) {
-    suspend operator fun invoke(id: Int) = repo.getContactById(id)
+    suspend operator fun invoke(id: Long) = repo.getContactById(id)
 }

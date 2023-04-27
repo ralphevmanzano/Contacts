@@ -21,7 +21,7 @@ class HomeFragment: Fragment() {
     private lateinit var adapter: ContactsAdapter
 
     @Inject
-    lateinit var homeNavigator: HomeNavigation
+    lateinit var homeNavigation: HomeNavigation
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,14 +39,14 @@ class HomeFragment: Fragment() {
 
     private fun setupUI() = with(binding) {
         adapter = ContactsAdapter()
-        adapter.onItemClick = {contact ->
+        adapter.onItemClick = { contact ->
             contact.id?.let {
-                homeNavigator.navigateToDetails(it)
+                homeNavigation.navigateToDetails(it)
             }
         }
         recyclerView.adapter = adapter
         fab.setOnClickListener {
-            homeNavigator.navigateToForm()
+            homeNavigation.navigateToForm()
         }
     }
 
