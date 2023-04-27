@@ -8,13 +8,13 @@ plugins {
 
 android {
     namespace = "com.codev.recruitment.ralphemersonmanzano.favorites"
-    compileSdk = 33
+    compileSdk = Config.compileSdkVersion
 
     defaultConfig {
-        minSdk = 26
-        targetSdk = 33
+        minSdk = Config.minSdkVersion
+        targetSdk = Config.targetSdkVersion
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = Config.androidTestInstrumentation
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -53,7 +53,11 @@ dependencies {
     implementation(Deps.navigationUI)
     implementation(Deps.navigationFragment)
 
+    testImplementation(project(Modules.testUtils))
     testImplementation(Deps.junit)
+    testImplementation(Deps.mockito)
+    testImplementation(Deps.archTesting)
+    testImplementation(Deps.coroutinesTest)
     androidTestImplementation(Deps.junitTest)
     androidTestImplementation(Deps.espresso)
 }

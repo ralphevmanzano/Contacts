@@ -73,8 +73,6 @@ class FormViewModel @Inject constructor(
             phoneNumber = _phone.value
         )
         viewModelScope.launch {
-            Log.d("FormViewModel", "Old contact $contact")
-            Log.d("FormViewModel", "New contact $newContact")
             updateContactUseCase(newContact)
             _isSaveSuccessful.postValue(Pair(true, -1L))
         }

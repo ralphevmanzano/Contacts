@@ -53,6 +53,7 @@ dependencies {
     implementation(Deps.navigationUI)
     implementation(Deps.navigationFragment)
 
+    testImplementation(project(Modules.testUtils))
     testImplementation(Deps.junit)
     testImplementation(Deps.mockito)
     testImplementation(Deps.archTesting)

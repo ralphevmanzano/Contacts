@@ -1,8 +1,8 @@
-package com.codev.recruitment.ralphemersonmanzano.home
+package com.codev.recruitment.ralphemersonmanzano.favorites
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.codev.recruitment.ralphemersonmanzano.data.usecase.GetContactsUseCase
-import com.codev.recruitment.ralphemersonmanzano.home.presentation.HomeViewModel
+import com.codev.recruitment.ralphemersonmanzano.data.usecase.GetFavoritesUseCase
+import com.codev.recruitment.ralphemersonmanzano.favorites.presentation.FavoritesViewModel
 import com.codev.recruitment.ralphemersonmanzano.mylibrary.model.Contact
 import com.codev.recruitment.ralphemersonmanzano.mylibrary.repository.ContactsRepository
 import com.codev.recruitment.ralphemersonmanzano.testutils.MainCoroutineScopeRule
@@ -10,22 +10,21 @@ import com.codev.recruitment.ralphemersonmanzano.testutils.getOrAwaitValue
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runBlockingTest
-import kotlinx.coroutines.test.runTest
+import org.junit.Test
 
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
-import org.junit.Test
 import org.junit.rules.TestRule
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.`when`
+import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
-
 
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
-class HomeViewModelTest {
+class FavoritesViewModelTest {
+
     @get:Rule
     val testInstantTaskExecutorRule: TestRule = InstantTaskExecutorRule()
 
@@ -35,16 +34,16 @@ class HomeViewModelTest {
     @Mock
     private lateinit var repository: ContactsRepository
 
-    private lateinit var getContactsUseCase: GetContactsUseCase
+    private lateinit var getFavoritesUseCase: GetFavoritesUseCase
 
     @ExperimentalCoroutinesApi
     @Before
     fun setup() {
-        getContactsUseCase = GetContactsUseCase(repository)
+        getFavoritesUseCase = GetFavoritesUseCase(repository)
     }
 
     @Test
-    fun `when getContacts should update liveData`() {
+    fun `when getFavorites should update liveData`() {
         coroutineScope.runBlockingTest {
             // Given
             val contacts = listOf(
@@ -57,13 +56,13 @@ class HomeViewModelTest {
                     0
                 )
             )
-            `when`(getContactsUseCase.invoke()).thenReturn(flowOf(contacts))
+            Mockito.`when`(getFavoritesUseCase.invoke()).thenReturn(flowOf(contacts))
 
             // When
-            val viewModel = HomeViewModel(getContactsUseCase)
+            val viewModel = FavoritesViewModel(getFavoritesUseCase)
 
             // Then
-            val result = viewModel.contacts.getOrAwaitValue()
+            val result = viewModel.favorites.getOrAwaitValue()
             assertEquals(0L, result.first().id)
             assertEquals("James", result.first().firstName)
             assertEquals("Bond", result.first().lastName)
