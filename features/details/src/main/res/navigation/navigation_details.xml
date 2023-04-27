@@ -11,7 +11,11 @@
         <action
             android:id="@+id/action_to_form"
             app:destination="@id/fragment_form"
-            app:launchSingleTop="true" />
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right" />
         <argument
             android:name="contactId"
             app:argType="long" />
@@ -23,6 +27,10 @@
         <action
             android:id="@+id/action_to_details"
             app:destination="@id/fragment_details"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"
             app:popUpTo="@id/navigation_details"
             app:popUpToInclusive="true" />
         <argument
@@ -37,13 +45,21 @@
         <action
             android:id="@+id/action_to_details"
             app:destination="@id/fragment_details"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
             app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"
             app:popUpTo="@id/navigation_details"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_to_form"
             app:destination="@id/fragment_form"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
             app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"
             app:popUpTo="@id/navigation_details"
             app:popUpToInclusive="true" />
     </fragment>

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -63,6 +64,14 @@ class FormFragment: Fragment() {
             } else {
                 viewModel.updateContact(contact!!)
             }
+        }
+
+        phoneEditText.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                saveButton.performClick()
+                return@setOnEditorActionListener true
+            }
+            false
         }
 
         if (contact != null) {

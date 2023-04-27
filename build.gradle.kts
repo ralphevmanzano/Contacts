@@ -1,11 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    id("com.android.application") version "8.0.0" apply false
-    id("com.android.library") version "8.0.0" apply false
-    id("org.jetbrains.kotlin.android") version "1.8.0" apply false
-    id("com.google.dagger.hilt.android") version "2.44" apply false
-    kotlin("jvm") version "1.8.10" // or kotlin("multiplatform") or any other kotlin plugin
-    kotlin("plugin.serialization") version "1.8.10"
+    id(Plugins.androidApplication) version Versions.pluginAndroid apply false
+    id(Plugins.androidLibrary) version Versions.pluginAndroid apply false
+    id(Plugins.kotlinAndroid) version Versions.pluginKotlin apply false
+    id(Plugins.hiltAndroid) version Versions.pluginHilt apply false
+    kotlin(Plugins.jvm) version Versions.pluginJvm
+    kotlin(Plugins.serialization) version Versions.pluginSerialization
 }
 
 buildscript {
@@ -14,7 +14,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        val nav_version = "2.5.3"
-        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version")
+        classpath(Deps.safeArgsGradlePlugin)
     }
 }

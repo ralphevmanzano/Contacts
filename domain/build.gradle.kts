@@ -1,9 +1,9 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("kotlinx-serialization")
-    id("kotlin-parcelize")
-    kotlin("kapt")
+    id(Plugins.androidLibrary)
+    id(Plugins.kotlinAndroid)
+    id(Plugins.kotlinxSerialization)
+    id(Plugins.kotlinParcelize)
+    kotlin(Plugins.kapt)
 }
 
 android {

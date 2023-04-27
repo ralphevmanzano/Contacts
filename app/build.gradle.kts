@@ -1,9 +1,9 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("androidx.navigation.safeargs")
-    id("com.google.dagger.hilt.android")
-    kotlin("kapt")
+    id(Plugins.androidApplication)
+    id(Plugins.kotlinAndroid)
+    id(Plugins.safeArgs)
+    id(Plugins.hiltAndroid)
+    kotlin(Plugins.kapt)
 }
 
 android {

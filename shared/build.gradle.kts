@@ -1,17 +1,17 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id(Plugins.androidLibrary)
+    id(Plugins.kotlinAndroid)
 }
 
 android {
     namespace = "com.codev.recruitment.ralphemersonmanzano.shared"
-    compileSdk = 33
+    compileSdk = Config.compileSdkVersion
 
     defaultConfig {
-        minSdk = 26
-        targetSdk = 33
+        minSdk = Config.minSdkVersion
+        targetSdk = Config.targetSdkVersion
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = Config.androidTestInstrumentation
         consumerProguardFiles("consumer-rules.pro")
     }
 

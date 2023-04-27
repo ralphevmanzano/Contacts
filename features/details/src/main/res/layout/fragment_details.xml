@@ -83,8 +83,8 @@
 
             <ImageView
                 android:id="@+id/callImageView"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/ic_phone" />
 
             <TextView
@@ -95,7 +95,7 @@
                 android:fontFamily="sans-serif"
                 android:text="@string/call"
                 android:textColor="@android:color/black"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@id/callImageView"
                 app:layout_constraintStart_toStartOf="@id/callImageView"
                 app:layout_constraintTop_toBottomOf="@id/callImageView" />
@@ -117,8 +117,8 @@
 
             <ImageView
                 android:id="@+id/textImageView"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/ic_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider1" />
@@ -130,7 +130,7 @@
                 android:fontFamily="sans-serif"
                 android:text="@string/text"
                 android:textColor="@android:color/black"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@id/textImageView"
                 app:layout_constraintStart_toStartOf="@id/textImageView"
                 app:layout_constraintTop_toBottomOf="@id/textImageView" />

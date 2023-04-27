@@ -1,4 +1,11 @@
 object Versions {
+    const val pluginAndroid = "8.0.0"
+    const val pluginKotlin = "1.8.0"
+    const val pluginHilt = "2.44"
+    const val pluginJvm = "1.8.10"
+    const val pluginSerialization = "1.8.10"
+    const val pluginSafeArgs = ""
+
     const val androidXCore = "1.10.0"
     const val appCompat = "1.6.1"
     const val material = "1.8.0"

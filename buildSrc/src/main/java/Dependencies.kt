@@ -31,4 +31,6 @@ object Deps {
     const val archTesting = "androidx.arch.core:core-testing:${Versions.archTesting}"
     const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
     const val coroutinesTestJvm = "org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:${Versions.coroutinesTest}"
+
+    const val safeArgsGradlePlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
 }

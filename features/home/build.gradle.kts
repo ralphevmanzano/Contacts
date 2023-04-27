@@ -1,20 +1,20 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.dagger.hilt.android")
-    id("androidx.navigation.safeargs")
-    kotlin("kapt")
+    id(Plugins.androidLibrary)
+    id(Plugins.kotlinAndroid)
+    id(Plugins.hiltAndroid)
+    id(Plugins.safeArgs)
+    kotlin(Plugins.kapt)
 }
 
 android {
     namespace = "com.codev.recruitment.ralphemersonmanzano.home"
-    compileSdk = 33
+    compileSdk = Config.compileSdkVersion
 
     defaultConfig {
-        minSdk = 26
-        targetSdk = 33
+        minSdk = Config.minSdkVersion
+        targetSdk = Config.targetSdkVersion
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = Config.androidTestInstrumentation
         consumerProguardFiles("consumer-rules.pro")
     }
 
